@@ -76,7 +76,7 @@ function NavBar() {
               href="login"
               onClick={toggleSidebar}
               className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${
-                location.hash === "#contact" ? "bg-blue-600" : ""
+                location.hash === "#login" ? "bg-blue-600" : ""
               }`}
             >
               LOGIN
