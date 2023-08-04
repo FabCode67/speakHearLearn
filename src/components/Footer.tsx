@@ -14,7 +14,7 @@ function Footer() {
             />
           </div>
           <p>
-          copylights &copy; {today.getFullYear()} SPEAK HEAR LEARN
+          copyrights &copy; {today.getFullYear()} SPEAK HEAR LEARN
           </p>
           <a href='' className='text-xs font-bold'>all right reserved</a>
         </div>
