@@ -1,6 +1,7 @@
 import shl from "../src/assets/shl.png";
 import { useState } from "react";
 import BurgerButton from "./BurgerButton";
+import { Link } from "react-router-dom";
 // import { useLocation } from "react-router-dom";
 // import BurgerButton from "./BurgerButton";
 // import LocalizationSwicher from "./Localization";
@@ -72,15 +73,12 @@ function NavBar() {
             >
               CONTACT
             </a>
-            <a
-              href="login"
+            <Link
               onClick={toggleSidebar}
-              className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${
-                location.hash === "/login" ? "bg-blue-600" : ""
-              }`}
-            >
+              className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${location.hash === "/login" ? "bg-blue-600" : ""}`} to={"/login"}            >
               LOGIN
-            </a>
+            </Link>
+          
            
           </div>
         </nav>
