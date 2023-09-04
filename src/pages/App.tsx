@@ -1,7 +1,7 @@
-import NavBar from "./NavBar";
+import NavBar from "../components/NavBar";
 import { FaSearch } from "react-icons/fa";
-import Frame from './assets/Frame.png'
-import Footer from "./components/Footer";
+import Frame from '../assets/Frame.png'
+import Footer from "../components/Footer";
 
 function App() {
   return (

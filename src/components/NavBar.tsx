@@ -1,22 +1,13 @@
-import shl from "../src/assets/shl.png";
+import shl from "../assets/shl.png";
 import { useState } from "react";
 import BurgerButton from "./BurgerButton";
 import { Link } from "react-router-dom";
-// import { useLocation } from "react-router-dom";
-// import BurgerButton from "./BurgerButton";
-// import LocalizationSwicher from "./Localization";
-// import { useTranslation } from "react-i18next";
-
 
 function NavBar() {
-//   const { t } = useTranslation();
   const [sidebarVisible, setSidebarVisible] = useState(false);
   const toggleSidebar = () => {
     setSidebarVisible(!sidebarVisible);
   };
-
-//   const location = useLocation();
-
   return (
     <div className="navbar mt-0 z-50 bg-orange-600 fixed w-full mb-[94rem] shadow-sm laptop:shadow-yellow-700">
       <div className="container laptop:mx-auto xs:mx-2 flex justify-between">
@@ -35,24 +26,17 @@ function NavBar() {
               sidebarVisible ? "" : "hidden laptop:flex"
             }`}
           >
-            <a
-              href="#home"
+            <Link
               onClick={toggleSidebar}
-              className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${
-                location.hash === "#home" ? "bg-blue-600" : ""
-              }`}
-            >
+              className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${location.hash === "#home" ? "bg-blue-600" : ""}`} to={"/"}            >
               HOME
-            </a>
-            <a
-              href="#about"
+            </Link>
+            <Link
+              
               onClick={toggleSidebar}
-              className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${
-                location.hash === "#about" ? "bg-blue-600" : ""
-              }`}
-            >
+              className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${location.hash === "/activities" ? "bg-blue-600" : ""}`} to={"/activities"}            >
               ACTIVITIES
-            </a>
+            </Link>
 
             <a
               href="#services"
@@ -64,22 +48,16 @@ function NavBar() {
               RESOURCES
             </a>
 
-            <a
-              href="#contact"
+            <Link
               onClick={toggleSidebar}
-              className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${
-                location.hash === "/contact" ? "bg-blue-600" : ""
-              }`}
-            >
+              className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${location.hash === "/contact" ? "bg-blue-600" : ""}`} to={"/contact"}            >
               CONTACT
-            </a>
+            </Link>
             <Link
               onClick={toggleSidebar}
               className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${location.hash === "/login" ? "bg-blue-600" : ""}`} to={"/login"}            >
               LOGIN
             </Link>
-          
-           
           </div>
         </nav>
       </div>

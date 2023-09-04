@@ -5,26 +5,26 @@ import google from '../assets/google.png'
 import { Link } from 'react-router-dom'
 const Login = () => {
     return (
-        <div className="min-h-screen h-fit w-full bg-gray-400">
-            <div className="min-h-screen h-fit w-full text-white p-5 flex bg-blue-1000 laptop:flex-row flex-col tablet:flex-row md-flex-row desktop:flex  justify-center text-center items-center m-auto">
+        <div className="min-h-screen h-screen w-full bg-gray-400">
+            <div className="min-h-screen h-screen w-full text-white p-5 flex bg-blue-1000 laptop:flex-row flex-col tablet:flex-row md-flex-row desktop:flex  justify-center text-center items-center m-auto">
                 <div className="leftdiv laptop:w-1/2 desktop:w-1/2 md:w-1/2 tablet:w-1/2 laptop:block desktop:block md:block tablet:block hidden la object-cover">
-                    <img src={child} alt="" className='r rounded-tl-3xl' />
+                    <img src={child} alt="" className='r rounded-tl-3xl h-screen' />
                 </div>
-                <div className="leftdiv w-full h-fit laptop:w-1/2 desktop:w-1/2 md:w-1/2 tablet:w-1/2 ">
-                    <div className="flex flex-col justify-center items-center space-y-4 m-auto min-h-screen h-fit">
-                        <div className="companyLogo flex justify-center text-center items-center m-auto ">
+                <div className="leftdiv w-full h-screen laptop:w-1/2 desktop:w-1/2 md:w-1/2 tablet:w-1/2 bg-blue-900 ">
+                    <div className="flex flex-col justify-center items-center space-y-2 min-h-screen h-ft bg-blue-200">
+                        <div className="companyLogo flex justify-center text-center items-center bg-blue-900 ">
                             <img src={bt} alt="" className='h-16 w-20' />
                         </div>
-                        <div className="companyLogo flex justify-center text-center items-center m-auto laptop:w-[50%] desktop:w-[50%] w-full">
+                        <div className="companyLogo flex justify-center text-center items-center  laptop:w-[50%] desktop:w-[50%] w-full">
                             <p className='w[-10%]'>Join  SpeakHearLearn and Empoweryour child's potential.</p>
                         </div>
-                        <div className="companyLogo flex justify-center text-center items-center m-auto">
-                            <button className='bg-white text-black  rounded-md px-4 space-x-3 py-2 flex justify-center text-center items-center m-auto'>
+                        <div className="companyLogo flex justify-center text-center items-center ">
+                            <button className='bg-white text-black  rounded-md px-4 space-x-3 py-2 flex justify-center text-center items-center '>
                                 <img src={google} alt="" className='' />
                                 <p className='te text-2xl font-bold'>continue with google</p>
                             </button>
                         </div>
-                        <div className="companyLogo flex justify-center text-center items-center m-auto">
+                        <div className="companyLogo flex justify-center text-center items-center ">
                             <div className='w-[7rem] h-1 bg-white'></div>
                             <p className='px-2 text-xl font-bold'>or</p>
                             <div className='w-[7rem] h-1 bg-white'></div>

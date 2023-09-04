@@ -5,13 +5,13 @@ import google from '../assets/google.png'
 import { Link } from 'react-router-dom'
 const Signin = () => {
     return (
-        <div className="min-h-screen h-fit w-full bg-gray-400">
-            <div className="min-h-screen h-fit w-full text-white p-5 flex bg-blue-1000 laptop:flex-row flex-col tablet:flex-row md-flex-row desktop:flex  justify-center text-center items-center m-auto">
+        <div className="min-h-screen h-screen w-full bg-gray-400">
+            <div className="min-h-screen h-screen w-full text-white p-5 flex bg-blue-1000 laptop:flex-row flex-col tablet:flex-row md-flex-row desktop:flex  justify-center text-center items-center m-auto">
             <div className="leftdiv laptop:w-1/2 desktop:w-1/2 md:w-1/2 tablet:w-1/2 laptop:block desktop:block md:block tablet:block hidden la object-cover">
-                    <img src={child} alt="" className='r rounded-tl-3xl' />
+                    <img src={child} alt="" className='r rounded-tl-3xl h-screen' />
                 </div>
-                <div className="leftdiv w-full h-fit laptop:w-1/2 desktop:w-1/2 md:w-1/2 tablet:w-1/2 ">
-                    <div className="flex flex-col justify-center items-center m-auto min-h-screen h-fit">
+                <div className="leftdiv w-full h-screen laptop:w-1/2 desktop:w-1/2 md:w-1/2 tablet:w-1/2 ">
+                    <div className="flex flex-col justify-center items-center m-auto min-h-screen h-screen">
                         <div className="companyLogo flex justify-center text-center items-center m-auto ">
                             <img src={bt} alt="" className='h-16 w-20' />
                         </div>
