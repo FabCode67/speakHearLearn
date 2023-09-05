@@ -5,11 +5,11 @@ function Contact() {
     <><NavBar /><div className="min-h min-h-screen w-full bg-orange-600 flex">
       <div className="left_div w-1/2  h-screen bg-gray-100 hidden desktop:block laptop:block ">
       </div>
-      <div className="laptop:w-1/2 desktop:w-1/2 w-full flex h-screen bg-blue-400">
+      <div className="laptop:w-1/2 desktop:w-1/2 w-full flex h-screen bg-blue-1000">
 
         <div className="w-full flex flex-col justify-center text-center items-center m-auto">
           <div className="messasge">
-            <h1 className="text-2xl font-bold mb-3">GET IN TOUCH WITH US</h1>
+            <h1 className="text-2xl font-bold mb-3 text-white">GET IN TOUCH WITH US</h1>
           </div>
           <form className="space space-y-2">
             <div className='name flex flex-col justify-center items-center space-y-1'>

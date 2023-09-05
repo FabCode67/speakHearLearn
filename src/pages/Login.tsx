@@ -10,9 +10,9 @@ const Login = () => {
                 <div className="leftdiv laptop:w-1/2 desktop:w-1/2 md:w-1/2 tablet:w-1/2 laptop:block desktop:block md:block tablet:block hidden la object-cover">
                     <img src={child} alt="" className='r rounded-tl-3xl h-screen' />
                 </div>
-                <div className="leftdiv w-full h-screen laptop:w-1/2 desktop:w-1/2 md:w-1/2 tablet:w-1/2 bg-blue-900 ">
-                    <div className="flex flex-col justify-center items-center space-y-2 min-h-screen h-ft bg-blue-200">
-                        <div className="companyLogo flex justify-center text-center items-center bg-blue-900 ">
+                <div className="leftdiv w-full h-screen laptop:w-1/2 desktop:w-1/2 md:w-1/2 tablet:w-1/2  bg-blue-1000 ">
+                    <div className="flex flex-col justify-center items-center space-y-2 min-h-screen h-ft bg-blue-1000">
+                        <div className="companyLogo flex justify-center text-center items-center bg-blue-1000 ">
                             <img src={bt} alt="" className='h-16 w-20' />
                         </div>
                         <div className="companyLogo flex justify-center text-center items-center  laptop:w-[50%] desktop:w-[50%] w-full">
