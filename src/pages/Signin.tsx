@@ -1,30 +1,31 @@
 import { useState } from 'react';
-
-import bt from '../assets/bt.png'
-import child from '../assets/child.png'
-import google from '../assets/google.png'
-import { Link } from 'react-router-dom'
+import bt from '../assets/bt.png';
+import child from '../assets/child.png';
+import google from '../assets/google.png';
+import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Signin = () => {
-
   type User = {
-  name: string;
-  email: string;
-  password: string;
-};
+    name: string;
+    email: string;
+    password: string;
+  };
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const storedUserData = localStorage.getItem('user');
-  const defaultUserData = '[]'; 
-  const [usersAll, setUsersAll] = useState<User []>(JSON.parse(storedUserData ?? defaultUserData));
-  if(!storedUserData) setUsersAll([])
+
+  // Initialize usersAll state with data from localStorage only once on component mount
+  const [usersAll, setUsersAll] = useState<User[]>(() => {
+    const storedUserData = localStorage.getItem('user');
+    return JSON.parse(storedUserData ?? '[]');
+  });
+
   // Function to handle form submission
-  const handleSignup = (e: { preventDefault: () => void; }) => {
+  const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
 
     // Check if passwords match
@@ -32,24 +33,26 @@ const Signin = () => {
       alert('Passwords do not match');
       return;
     }
+
     const user = {
       name,
       email,
       password,
     };
 
-    if(usersAll){
-    const foundUser = usersAll.find((user) => user.email === email);
-        if (foundUser) {
+    if (usersAll.some((u) => u.email === email)) {
       toast.error('Email already exists');
       return;
     }
-}
-    usersAll.push(user);
 
-    localStorage.setItem('user', JSON.stringify(usersAll));
+    // Update the usersAll state using the setUsersAll function
+    setUsersAll((prevUsers) => [...prevUsers, user]);
+
+    localStorage.setItem('user', JSON.stringify([...usersAll, user]));
     toast.success('Account created successfully! Please log in.');
   };
+
+  
 
     return (
         <div className="min-h-screen h-screen w-full bg-gray-400">
