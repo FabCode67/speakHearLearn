@@ -38,15 +38,11 @@ function NavBar() {
               ACTIVITIES
             </Link>
 
-            <a
-              href="#services"
+            <Link
               onClick={toggleSidebar}
-              className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${
-                location.hash === "#services" ? "bg-blue-600" : ""
-              }`}
-            >
+              className={`inline-flex items-center py-3 px-3 laptop:my-6 my-2 overflow-y-auto rounded font-bold hover:text-xs ${location.hash === "#services" ? "bg-blue-600" : ""}`} to={"/resources"}            >
               RESOURCES
-            </a>
+            </Link>
 
             <Link
               onClick={toggleSidebar}
