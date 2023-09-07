@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import bt from '../assets/bt.png'
 import child from '../assets/child.png'
 import google from '../assets/google.png'
@@ -7,36 +7,39 @@ import { Link } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+interface User {
+    email: string;
+    password: string;
+}
 
 const Login = () => {
-// Navigate("/");
-const navigate = useNavigate();
- type User = {
-  name: string;
-  email: string;
-  password: string;
-};
+  const navigate = useNavigate();
+  // Initialize usersAll with an empty array
+  const [usersAll, setUsersAll] = useState<User[]>([]);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const storedUserData = localStorage.getItem('user');
-  const defaultUserData = '[]'; 
-  const [usersAll, setUsersAll] = useState<User []>(JSON.parse(storedUserData ?? defaultUserData));
-  if(!storedUserData) setUsersAll([])
-  const handleLogin = (e: { preventDefault: () => void; }) => {
+
+  useEffect(() => {
+    // Load user data from localStorage once when the component mounts
+    const storedUserData = localStorage.getItem('user');
+    if (storedUserData) {
+      setUsersAll(JSON.parse(storedUserData));
+    }
+  }, []); // Use an empty dependency array to run this effect only once
+
+  const handleLogin = (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    if(usersAll){
-    const foundUser = usersAll.find((user) => (user.email === email && user.password === password));
-    if (foundUser) {
-      toast.success('loged in Successfull');
-      navigate("/");
-      return;
-    } else{
-      toast.error('invalid credentials');
+    if (usersAll.length > 0) { // Check if usersAll has data
+      const foundUser = usersAll.find((user) => user.email === email && user.password === password);
+      if (foundUser) {
+        toast.success('Logged in Successfully');
+        navigate('/');
+      } else {
+        toast.error('Invalid credentials');
+      }
     }
-}
-
   };
 
     return (
@@ -67,29 +70,29 @@ const navigate = useNavigate();
                         <form className='flex flex-col justify-center items-center space-y-3' onSubmit={handleLogin}>
                             <div className='name flex flex-col justify-center items-center space-y-1'>
                                 <label htmlFor="" className='text-white flex justify-start m-auto items-start text-start float-left w-full'>Email</label>
-                                <input 
-                                type="email" 
-                                className='w-[20rem] h-10 rounded-md px-2 text-black' 
-                                                                        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+                                <input
+                                    type="email"
+                                    className='w-[20rem] h-10 rounded-md px-2 text-black'
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                 />
                             </div>
                             <div className='name flex flex-col justify-center items-center space-y-1'>
                                 <label htmlFor="" className='text-white flex justify-start m-auto items-start text-start float-left w-full'>password</label>
-                                <input 
-                                type="password" 
-                                className='w-[20rem] h-10 rounded-md px-2 text-black' 
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+                                <input
+                                    type="password"
+                                    className='w-[20rem] h-10 rounded-md px-2 text-black'
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
                                 />
-                            </div>                            
+                            </div>
                             <div className='name flex flex-col justify-center items-center space-y-1 w-full'>
                                 <button className='bg-orange-600 text-white rounded-md px-4 space-x-3 py-2 w-full flex justify-center text-center'>
                                     <p className='text-2xl font-bold'>Login</p>
                                 </button>
                             </div>
                             <div className='name flex flex-col justify-end items-end text-end m-auto space-y-1 w-full float-right'>
-             <Link to='/signup' className='text-blue-400 pr-2 loat-right w-full justify-end items-end text-end m-auto'>not SPH member account? Signup</Link>
+                                <Link to='/signup' className='text-blue-400 pr-2 loat-right w-full justify-end items-end text-end m-auto'>not SPH member account? Signup</Link>
                             </div>
                         </form>
                     </div>
