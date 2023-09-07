@@ -52,10 +52,10 @@ const Resources = () => {
            <div className='h-28 w-full bg-gray-400 flex justify-center text-center items-center '>
             <h1 className='bb font-bold'>Other resources</h1>
            </div>
-           <div className='h-28 w-full bg-gray-400 text-center flex flex-col my-auto p-3'>
+           {/* <div className='h-28 w-full bg-gray-400 text-center flex flex-col my-auto p-3'>
            <h1 className='bb font-bold flex '>ITETERO</h1>
            <a href='https://rw.goodinternet.org/rw/' target='blank' className='u underline text-blue-900 flex '>ITerer</a>
-           </div>
+           </div> */}
            {/* <div className='h-28 w-full bg-gray-400 text-center flex flex-col my-auto p-3'>
            <h1 className='bb font-bold flex '>Global digitla kid's library</h1>
            <a href='https://digitallibrary.io/topic/early-math/?gclid=CjwKCAjw6eWnBhAKEiwADpnw9vzY1mhXQFbKfJpZaQbRQcpjTE-ZuJp3qswkCyLFAnWyEopBn5OnmBoCm9kQAvD_BwE' target='blank' className='u underline text-blue-900 flex '>Global digitla kid's library</a>
