@@ -27,11 +27,13 @@ const Signin = () => {
   // Function to handle form submission
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
+    if(email === "" ||email === "" ||password === "" ||confirmPassword === "") {
+        return toast.error('all fields are required');
+    }
 
     // Check if passwords match
     if (password !== confirmPassword) {
-      alert('Passwords do not match');
-      return;
+        return toast.error('password must match');
     }
 
     const user = {
