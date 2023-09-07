@@ -14,24 +14,22 @@ interface User {
 
 const Login = () => {
   const navigate = useNavigate();
-  // Initialize usersAll with an empty array
   const [usersAll, setUsersAll] = useState<User[]>([]);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   useEffect(() => {
-    // Load user data from localStorage once when the component mounts
     const storedUserData = localStorage.getItem('user');
     if (storedUserData) {
       setUsersAll(JSON.parse(storedUserData));
     }
-  }, []); // Use an empty dependency array to run this effect only once
+  }, []); 
 
   const handleLogin = (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    if (usersAll.length > 0) { // Check if usersAll has data
+    if (usersAll.length > 0) { 
       const foundUser = usersAll.find((user) => user.email === email && user.password === password);
       if (foundUser) {
         toast.success('Logged in Successfully');
