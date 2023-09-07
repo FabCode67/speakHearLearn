@@ -1,6 +1,6 @@
 import NavBar from '../components/NavBar';
 import vid3 from '../assets/vid3.mp4';
-import vid4 from '../assets/vid4.mp4';
+// import vid4 from '../assets/vid4.mp4';
 // import vid5 from '../assets/vid5.mp4';
 // import vid6 from '../assets/vid6.mp4';
 
@@ -18,7 +18,7 @@ const Resources = () => {
         </div>
         <div className='laptop:w-1/2 desktop:w-1/2 w-full flex bg-orange-100 h-screen'>
         <video controls className='w-full object-fill'>
-          <source src={vid4} type="video/mp4" className='w-full' />
+          {/* <source src={vid4} type="video/mp4" className='w-full' /> */}
           Your browser does not support the video tag.
         </video>
 </div>
