@@ -1,4 +1,3 @@
-import React from 'react';
 import NavBar from '../components/NavBar';
 import vid3 from '../assets/vid3.mp4';
 
