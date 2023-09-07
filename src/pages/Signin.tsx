@@ -63,7 +63,11 @@ const Signin = () => {
                 <div className="leftdiv w-full h-screen laptop:w-1/2 desktop:w-1/2 md:w-1/2 tablet:w-1/2 ">
                     <div className="flex flex-col justify-center items-center m-auto min-h-screen h-screen">
                         <div className="companyLogo flex justify-center text-center items-center m-auto ">
+                        <Link to={'/'}>
+                        <div className="companyLogo flex justify-center text-center items-center bg-blue-1000 ">
                             <img src={bt} alt="" className='h-16 w-20' />
+                        </div>
+                        </Link>
                         </div>
                         <div className="companyLogo flex justify-center text-center items-center m-auto laptop:w-[50%] desktop:w-[50%] w-full">
                             <p className='w[-10%]'>Join  SpeakHearLearn and Empoweryour child's potential.</p>

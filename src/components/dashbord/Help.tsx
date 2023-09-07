@@ -23,6 +23,106 @@ const Help = () => {
         list5: "Five",
       },
     },
+    {
+      image:
+        "https://cdn.pixabay.com/photo/2015/04/04/19/13/three-706895_1280.jpg",
+      lists: {
+        list1: "Three",
+        list2: "One",
+        list3: "Four",
+        list4: "Two",
+        list5: "Five",
+      },
+    },
+    {
+      image:
+        "https://cdn.pixabay.com/photo/2015/04/04/19/13/four-706894_1280.jpg",
+      lists: {
+        list1: "Three",
+        list2: "One",
+        list3: "Four",
+        list4: "Two",
+        list5: "Five",
+      },
+    },
+    
+    {
+      image:
+        "https://cdn.pixabay.com/photo/2015/04/04/19/13/seven-706891_960_720.jpg",
+      lists: {
+        list1: "Three",
+        list2: "Seven",
+        list3: "Six",
+        list4: "Two",
+        list5: "Five",
+      },
+    },
+    {
+      image:
+        "https://cdn.pixabay.com/photo/2015/04/04/19/13/eight-706890_1280.jpg",
+      lists: {
+        list1: "Three",
+        list2: "Seven",
+        list3: "Eight",
+        list4: "Two",
+        list5: "Five",
+      },
+    },
+    {
+      image:
+        "https://cdn.pixabay.com/photo/2015/04/04/19/13/nine-706889_1280.jpg",
+      lists: {
+        list1: "Three",
+        list2: "Seven",
+        list3: "Eight",
+        list4: "Two",
+        list5: "Nine",
+      },
+    },
+    {
+      image:
+        "https://clipart-library.com/images/kTMKoEopc.png",
+      lists: {
+        list1: "A",
+        list2: "B",
+        list3: "C",
+        list4: "D",
+        list5: "E",
+      },
+    },
+    {
+      image:
+        "https://static.vecteezy.com/system/resources/previews/008/489/743/original/number-ten-10-red-number-png.png",
+      lists: {
+        list1: "Three",
+        list2: "Ten",
+        list3: "Eight",
+        list4: "Two",
+        list5: "Nine",
+      },
+    },
+    {
+      image:
+        "https://static.wikia.nocookie.net/aesthetics/images/a/a3/Pure_blue.png/revision/latest?cb=20210323184329",
+      lists: {
+        list1: "Blue",
+        list2: "Yellow",
+        list3: "Red",
+        list4: "Green",
+        list5: "Black",
+      },
+    },
+    {
+      image:
+        "https://www.easylinedrawing.com/wp-content/uploads/2019/07/house_drawing_tutorial.png",
+      lists: {
+        list1: "Horse",
+        list2: "Car",
+        list3: "House",
+        list4: "Man",
+        list5: "Bic",
+      },
+    },
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -37,7 +137,7 @@ const Help = () => {
 
   const currentContent = contents[currentImageIndex];
 
-  const correctAnswers = ['Lion', 'Two'];
+  const correctAnswers = ['Lion', 'Two', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'A', 'Blue', 'House'];
 
   const handleLabelSelect = (label: string) => {
     if (buttonClicked) {
