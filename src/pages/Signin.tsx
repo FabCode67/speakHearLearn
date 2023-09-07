@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import bt from '../assets/bt.png'
 import child from '../assets/child.png'
@@ -22,7 +22,7 @@ const Signin = () => {
   const storedUserData = localStorage.getItem('user');
   const defaultUserData = '[]'; 
   const [usersAll, setUsersAll] = useState<User []>(JSON.parse(storedUserData ?? defaultUserData));
-
+  if(!storedUserData) setUsersAll([])
   // Function to handle form submission
   const handleSignup = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
@@ -41,7 +41,6 @@ const Signin = () => {
     if(usersAll){
     const foundUser = usersAll.find((user) => user.email === email);
         if (foundUser) {
-        // alert("already exist")
       toast.error('Email already exists');
       return;
     }

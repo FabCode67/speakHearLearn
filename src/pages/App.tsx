@@ -2,6 +2,7 @@ import NavBar from "../components/NavBar";
 import { FaSearch } from "react-icons/fa";
 import Frame from '../assets/Frame.png'
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
                 We invite you to explore foundational information and find dynamic ideas from the field. This site is designed for teachers, families, and others interested in literacy for children and youth with visual impairments, including those who are deafblind and/or have multiple disabilities. Browse these practical activities and resources, and join our community!
                 </p>
                 <div className="flex animate-bounce laptop:flex-row tablet:flex-row flex-col laptop:space-x-5 tablet:space-x-5 mt-16 mx-auto laptop:mx-0 w-full space-y-4 laptop:space-y-0 tablet:space-y-0">
-              <button className="hover:bg-white hover:text-black text-white px-10 py-3 border-2 border-white animate-fade-in">START WITH US</button>
+              <button className="hover:bg-white hover:text-black text-white px-10 py-3 border-2 border-white animate-fade-in"><Link to={"/login"}> START WITH US</Link></button>
               <button className="hover:bg-white hover:text-black text-white px-10 py-3 border-2 border-white animate-fade-in">LEARN MORE</button>
             </div>
                 </div>

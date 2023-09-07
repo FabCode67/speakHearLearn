@@ -1,9 +1,44 @@
 
+import { useState } from 'react';
 import bt from '../assets/bt.png'
 import child from '../assets/child.png'
 import google from '../assets/google.png'
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
+
 const Login = () => {
+// Navigate("/");
+const navigate = useNavigate();
+ type User = {
+  name: string;
+  email: string;
+  password: string;
+};
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const storedUserData = localStorage.getItem('user');
+  const defaultUserData = '[]'; 
+  const [usersAll, setUsersAll] = useState<User []>(JSON.parse(storedUserData ?? defaultUserData));
+  if(!storedUserData) setUsersAll([])
+  const handleLogin = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    if(usersAll){
+    const foundUser = usersAll.find((user) => (user.email === email && user.password === password));
+    if (foundUser) {
+      toast.success('loged in Successfull');
+      navigate("/");
+      return;
+    } else{
+      toast.error('invalid credentials');
+    }
+}
+
+  };
+
     return (
         <div className="min-h-screen h-screen w-full bg-gray-400">
             <div className="min-h-screen h-screen w-full text-white p-5 flex bg-blue-1000 laptop:flex-row flex-col tablet:flex-row md-flex-row desktop:flex  justify-center text-center items-center m-auto">
@@ -29,14 +64,24 @@ const Login = () => {
                             <p className='px-2 text-xl font-bold'>or</p>
                             <div className='w-[7rem] h-1 bg-white'></div>
                         </div>
-                        <form className='flex flex-col justify-center items-center space-y-3'>
+                        <form className='flex flex-col justify-center items-center space-y-3' onSubmit={handleLogin}>
                             <div className='name flex flex-col justify-center items-center space-y-1'>
                                 <label htmlFor="" className='text-white flex justify-start m-auto items-start text-start float-left w-full'>Email</label>
-                                <input type="email" className='w-[20rem] h-10 rounded-md px-2' />
+                                <input 
+                                type="email" 
+                                className='w-[20rem] h-10 rounded-md px-2 text-black' 
+                                                                        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+                                />
                             </div>
                             <div className='name flex flex-col justify-center items-center space-y-1'>
                                 <label htmlFor="" className='text-white flex justify-start m-auto items-start text-start float-left w-full'>password</label>
-                                <input type="password" className='w-[20rem] h-10 rounded-md px-2' />
+                                <input 
+                                type="password" 
+                                className='w-[20rem] h-10 rounded-md px-2 text-black' 
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+                                />
                             </div>                            
                             <div className='name flex flex-col justify-center items-center space-y-1 w-full'>
                                 <button className='bg-orange-600 text-white rounded-md px-4 space-x-3 py-2 w-full flex justify-center text-center'>
@@ -50,6 +95,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
 
     )
