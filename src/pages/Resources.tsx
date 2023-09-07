@@ -1,8 +1,8 @@
 import NavBar from '../components/NavBar';
 import vid3 from '../assets/vid3.mp4';
 import vid4 from '../assets/vid4.mp4';
-import vid5 from '../assets/vid5.mp4';
-import vid6 from '../assets/vid6.mp4';
+// import vid5 from '../assets/vid5.mp4';
+// import vid6 from '../assets/vid6.mp4';
 
 const Resources = () => {
   return (
@@ -36,16 +36,16 @@ const Resources = () => {
 
           </div>
           <div className='h-full '>
-          <video controls className='w-full object-fill'>
+          {/* <video controls className='w-full object-fill'>
           <source src={vid5} type="video/mp4" className='w-full' />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
           </div>
           <div className='h-full '>
-          <video controls className='w-full object-fill'>
+          {/* <video controls className='w-full object-fill'>
           <source src={vid6} type="video/mp4" className='w-full' />
           Your browser does not support the video tag.
-        </video>
+        </video> */}
           </div>
           <div className='h-full  flex flex-col p-3 space-y-3'>
 
