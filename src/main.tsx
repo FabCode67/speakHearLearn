@@ -10,6 +10,7 @@ import DashboardLayout from './pages/DashboraLayouts.tsx'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Users from './components/dashbord/Users.tsx'
 import Help from './components/dashbord/Help.tsx'
+import Resources from './pages/Resources.tsx'
 // import MainContent from './components/MainCotent.tsx'
 
 
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/signup" element={<Signin />} />
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/resources" element={<Resources />} />
         <Route path="/activities/*" element={<DashboardLayout />}> {/* Update the path */}
           {/* Define child routes */}
           {/* <Route path="/dashboard" element={<MainContent />} /> */}
